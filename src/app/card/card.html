@@ -1,0 +1,41 @@
+<div class="product-grid">
+  @for (product of products$ | async; track product.id) {
+    <div class="product-card">
+      <img [src]="product.image" [alt]="product.title" class="product-card__image">
+
+      <div class="card__content">
+        <h3 class="card__title">{{ product.title }}</h3>
+        <p class="card__category">{{ product.category }}</p>
+        <p class="card__price">{{ product.price }}$</p>
+
+        <div class="card__rating">
+          <p class="card__rating-item">⭐️ {{ product.rating.rate }}</p>
+          <p class="card__rating-item">Count: {{ product.rating.count }}</p>
+        </div>
+      </div>
+
+      <button type="button" class="see-all-btn" (click)="openModal(product)">Learn more</button>
+    </div>
+  }
+</div>
+
+@if (selectedProduct) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <button type="button" class="modal__close" (click)="closeModal()" aria-label="Close">✕</button>
+
+      <img [src]="selectedProduct.image" [alt]="selectedProduct.title" class="modal__image">
+
+      <h2 class="modal__title">{{ selectedProduct.title }}</h2>
+      <p class="card__category">{{ selectedProduct.category }}</p>
+      <p class="card__price">Price: {{ selectedProduct.price }}$</p>
+
+      <div class="card__rating">
+        <p class="card__rating-item">⭐️: {{ selectedProduct.rating.rate }}</p>
+        <p class="card__rating-item">Count: {{ selectedProduct.rating.count }}</p>
+      </div>
+
+      <p class="modal__description">{{ selectedProduct.description }}</p>
+    </div>
+  </div>
+}
