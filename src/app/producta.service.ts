@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable} from '@angular/core';
-import { ProductInterface } from './modal/product-interface';
+import { ProductInterface } from './interfaces/IProducts';
 import { environment } from '../environments/environment';
 
 @Injectable({providedIn:'root'})

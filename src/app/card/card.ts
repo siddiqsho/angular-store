@@ -1,19 +1,24 @@
-import { Component, inject } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
 import { ProductService } from '../producta.service';
-import { ProductInterface } from '../modal/product-interface';
+import { ProductInterface } from '../interfaces/IProducts';
 
 @Component({
-  imports: [AsyncPipe],
+  imports: [],
   selector: 'app-card',
   styleUrl: './card.css',
   templateUrl: './card.html',
 })
-export class Card {
+export class Card implements OnInit {
   private productService = inject(ProductService);
 
-  products$ = this.productService.getProducts();
+  products: ProductInterface[] = [];
   selectedProduct: ProductInterface | null = null;
+
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe(data => {
+      this.products = data;
+    });
+  }
 
   openModal(product: ProductInterface) {
     this.selectedProduct = product;
