@@ -11,4 +11,7 @@ private http=inject(HttpClient)
 getProducts(){
     return this.http.get<ProductInterface[]>(`${environment.apiUrl}/products`)
 }
+deleteProducts(id:number){
+    return this.http.delete(`${environment.apiUrl}/products/${id}`)
+}
 }

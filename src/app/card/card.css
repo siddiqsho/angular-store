@@ -62,18 +62,24 @@
 .card__rating-item {
   margin: 0;
 }
-.see-all-btn {
+.btns > *{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  background-color: #3525CD;
-  color: #ffffff;
   font-weight: 500;
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.1s ease;
   cursor: pointer;
+   border: none;
+  font-size: 1rem;
+}
+
+.btns {
+  display: flex;
+  justify-content:space-between;
+  
 }
 
 .see-all-btn:hover {
@@ -84,8 +90,13 @@
   transform: scale(0.98);
 }
 .see-all-btn {
-  border: none;
-  font-size: 1rem;
+ background-color: #281da8;
+ color: white;
+}
+
+.deleteBtn{
+  background-color: #DC2626 ;
+  color: #FFFFFF; 
 }
 
 .modal-overlay {

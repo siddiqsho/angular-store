@@ -15,7 +15,7 @@ export class Card implements OnInit {
   selectedProduct: ProductInterface | null = null;
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(data => {
+    this.productService.getProducts().subscribe((data) => {
       this.products = data;
     });
   }
@@ -26,5 +26,17 @@ export class Card implements OnInit {
 
   closeModal() {
     this.selectedProduct = null;
+  }
+
+  deleteProduct(id: number) {
+    this.productService.deleteProducts(id).subscribe({
+      next: () => {
+        this.products = this.products.filter((p) => p.id !== id);
+        console.log(`Продукт с ID ${id} успешно удален`);
+      },
+      error: (err) => {
+        console.error('Ошибка при удалении:', err);
+      },
+    });
   }
 }
