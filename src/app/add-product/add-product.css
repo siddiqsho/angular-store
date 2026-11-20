@@ -1,0 +1,103 @@
+.modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(128, 128, 128, 0.26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 16px;
+}
+
+.modal{
+    background-color: #fff;
+    border-radius:12px;
+    width: 100%;
+    max-width: 460px;
+    padding: 24px;
+    max-height: 1000px;
+    overflow-y: auto;
+}
+
+.modal form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.h2-add-product{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.label-add-product{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-add-product{
+    border-radius: 7px;
+    border: 2px solid gray;
+    height: 25px;
+    padding: 5px;
+    outline: none;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.rating{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.input-add-product[name='rate'],
+.input-add-product[name='count']{
+    width:200px;
+}
+.btn-add-product{
+    padding:7px;
+    display: block;
+    margin:20px auto 0;
+    width: 250px;
+    border-radius: 7px;
+    border: 2px solid gray;
+    background: rgb(19, 77, 124);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.header-modal{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.close-btn-modal{
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8FAFC;
+  color: #64748B;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-btn-modal:hover {
+  background-color: #FEE2E2;
+  border-color: #FECACA;
+  color: #DC2626;
+}

@@ -14,4 +14,7 @@ getProducts(){
 deleteProducts(id:number){
     return this.http.delete(`${environment.apiUrl}/products/${id}`)
 }
+addProducts(product:Omit<ProductInterface,'id'>){
+    return this.http.post<ProductInterface>(`${environment.apiUrl}/products`,product)   
+}
 }

@@ -1,0 +1,49 @@
+<div class="modal-overlay" (click)="onClose()">
+    <div class="modal" (click)="$event.stopPropagation()">
+     <div class="header-modal">
+           <h2 class="h2-add-product">New Product</h2>
+           <button class="close-btn-modal" (click)="onClose()">X</button>
+     </div>
+        <form (ngSubmit)="onSubmit()">
+<div>
+    <label class="label-add-product"> Title</label>
+    <input class="input-add-product" type="text" name="title" [(ngModel)]="title">
+</div>
+
+<div>
+    <label class="label-add-product" > Price</label>
+    <input class="input-add-product" type="number" name="price" [(ngModel)]="price">
+</div>
+
+<div>
+    <label class="label-add-product" for="">Category</label>
+    <input class="input-add-product" type="text" name="category" [(ngModel)]="category">
+</div>
+
+<div>
+    <label class="label-add-product" for="">Image(url)</label>
+    <input class="input-add-product" type="text" name="image" [(ngModel)]="image">
+</div>
+
+<div>
+    <label class="label-add-product" for="">Description</label>
+    <input class="input-add-product" type="text" name="description" [(ngModel)]="description">
+</div>
+
+
+<div class="rating">
+    <div>
+    <label class="label-add-product" for="">Rate</label>
+    <input class="input-add-product" type="number" name="rate" [(ngModel)]="rating.rate">
+</div>
+
+<div>
+    <label class="label-add-product" for="">Count</label>
+    <input class="input-add-product" type="number" name="count" [(ngModel)]="rating.count">
+</div>
+</div>
+
+<button type="submit" class="btn-add-product">Add Product</button>
+</form>
+    </div>
+</div>

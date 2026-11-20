@@ -1,5 +1,10 @@
+<button class="add-product-btn" (click)="openAddModal()">Add product</button>
+@if(isAddModalOpen){
+  <app-add-product (close)="isAddModalOpen=false"></app-add-product>
+}
 <div class="product-grid">
   @for (product of products; track product.id) {
+
   <div class="product-card">
     <img [src]="product.image" [alt]="product.title" class="product-card__image">
 

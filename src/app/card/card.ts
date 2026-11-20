@@ -1,16 +1,18 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ProductService } from '../producta.service';
 import { ProductInterface } from '../interfaces/IProducts';
-
+import { AddProduct } from '../add-product/add-product';
 @Component({
-  imports: [],
+  imports: [AddProduct],
   selector: 'app-card',
   styleUrl: './card.css',
   templateUrl: './card.html',
 })
 export class Card implements OnInit {
   private productService = inject(ProductService);
+       
 
+  isAddModalOpen=false;
   products: ProductInterface[] = [];
   selectedProduct: ProductInterface | null = null;
 
@@ -38,5 +40,12 @@ export class Card implements OnInit {
         console.error('Ошибка при удалении:', err);
       },
     });
+  }
+
+  openAddModal(){
+    this.isAddModalOpen=true
+  }
+  closeAddModal(){
+    this.isAddModalOpen=false
   }
 }
